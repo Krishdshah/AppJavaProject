@@ -21,14 +21,13 @@ public class LoginController {
     private Label statusLabel;
 
     @FXML
-    protected void handleLoginButtonAction(ActionEvent event) {
+    protected void handleLoginButtonAction(ActionEvent event) throws IOException {
         String userId = userIdField.getText();
         String password = passwordField.getText();
 
         if (userId.equals("test") && password.equals("collabconnect")) {
-            statusLabel.setText("Login Successful!");
-            statusLabel.setTextFill(Color.GREEN);
-            // In a real app, you would navigate to the main dashboard here.
+            // On successful login, switch to the dashboard view
+            App.setRoot("frontend/dashboard-view");
         } else {
             statusLabel.setText("Invalid User ID or Password.");
             statusLabel.setTextFill(Color.RED);

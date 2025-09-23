@@ -15,7 +15,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Start the application with the login view
-        scene = new Scene(loadFXML("frontend/login-view"), 400, 450);
+        scene = new Scene(loadFXML("frontend/login-view"), 800, 600); // Increased default size
         stage.setTitle("CollabConnect");
         stage.setScene(scene);
         stage.show();
