@@ -8,20 +8,22 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="400.0" prefWidth="400.0" spacing="15.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.collabconnect.RegistrationController">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="400.0" spacing="15.0" styleClass="root-pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.collabconnect.RegistrationController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-    <Label text="Create Your CollabConnect Account">
+
+    <Label styleClass="header-label" text="Create Your CollabConnect Account" />
+
+    <TextField fx:id="nameField" promptText="Enter your full name" />
+    <TextField fx:id="emailField" promptText="Enter your email" />
+    <PasswordField fx:id="passwordField" promptText="Choose a secure password" />
+
+    <Button onAction="#handleRegisterButtonAction" prefWidth="200.0" text="Register" />
+
+    <Label fx:id="statusLabel">
         <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="14.0" />
         </font>
     </Label>
-    <Label text="Full Name" />
-    <TextField fx:id="nameField" promptText="Enter your full name" />
-    <Label text="Email Address" />
-    <TextField fx:id="emailField" promptText="Enter your email" />
-    <Label text="Password" />
-    <PasswordField fx:id="passwordField" promptText="Choose a secure password" />
-    <Button onAction="#handleRegisterButtonAction" prefWidth="200.0" text="Register" />
 </VBox>
