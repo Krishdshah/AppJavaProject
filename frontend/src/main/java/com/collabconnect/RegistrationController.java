@@ -7,6 +7,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 
+import java.io.IOException;
+
 public class RegistrationController {
 
     @FXML
@@ -30,10 +32,13 @@ public class RegistrationController {
             statusLabel.setText("Please fill in all fields.");
             statusLabel.setTextFill(Color.RED);
         } else {
-            // Later, we will send this data to the backend.
-            // For now, we just show a success message.
             statusLabel.setText("Registration Successful!");
             statusLabel.setTextFill(Color.GREEN);
         }
+    }
+
+    @FXML
+    protected void switchToLogin(ActionEvent event) throws IOException {
+        App.setRoot("frontend/login-view");
     }
 }
