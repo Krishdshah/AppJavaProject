@@ -6,14 +6,13 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="root-pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.collabconnect.DashboardController">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="root-pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.collabconnect.DashboardController">
     <top>
         <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="20.0" style="-fx-background-color: #4682B4;">
             <children>
                 <Label fx:id="welcomeLabel" styleClass="header-label" text="Welcome, Krish D Shah!" HBox.hgrow="ALWAYS" />
-                <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogoutButton" text="Logout" />
+                <Button onAction="#handleLogoutButton" text="Logout" />
             </children>
             <padding>
                 <Insets left="20.0" right="20.0" />
@@ -23,25 +22,14 @@
     <left>
         <VBox prefHeight="540.0" prefWidth="180.0" spacing="10.0" style="-fx-background-color: #B0C4DE;">
             <children>
-                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Dashboard" />
-                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="My Projects" />
-                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Find Partners" />
-                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="My Profile" />
+                <Button onAction="#handleShowDashboard" maxWidth="1.7976931348623157E308" text="Dashboard" />
+                <Button onAction="#handleShowProjects" maxWidth="1.7976931348623157E308" text="My Projects" />
+                <Button onAction="#handleShowFindMates" maxWidth="1.7976931348623157E308" text="Find Mates" />
+                <Button onAction="#handleShowProfile" maxWidth="1.7976931348623157E308" text="My Profile" />
             </children>
             <padding>
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
             </padding>
         </VBox>
     </left>
-    <center>
-        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-            <children>
-                <Label text="Main Content Area">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                </Label>
-            </children>
-        </VBox>
-    </center>
 </BorderPane>

@@ -30,12 +30,13 @@
     -fx-background-color: #45a049; /* Darker Green */
 }
 
-/* Style for the status label (success) */
-.status-label-success {
-    -fx-text-fill: #3C763D;
-}
-
-/* Style for the status label (error) */
-.status-label-error {
-    -fx-text-fill: #A94442;
+/* New "Frosted Glass" style for content panes */
+.glass-pane {
+    -fx-background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-border-color: rgba(255, 255, 255, 0.5); /* Faint white border */
+    -fx-border-radius: 10;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5); /* Subtle shadow */
 }
