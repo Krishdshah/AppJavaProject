@@ -3,21 +3,21 @@
     -fx-background-color: linear-gradient(to bottom right, #6495ED, #B0C4DE);
 }
 
-/* Style for the main header label */
+/*the main header label */
 .header-label {
     -fx-font-size: 20px;
     -fx-text-fill: white;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.5, 0, 1);
 }
 
-/* Style for input fields */
+/* input fields */
 .text-field, .password-field {
     -fx-background-radius: 10;
     -fx-border-radius: 10;
     -fx-prompt-text-fill: #A9A9A9;
 }
 
-/* Style for the main button */
+/*the main button */
 .button {
     -fx-background-color: #4CAF50; /* Green */
     -fx-text-fill: white;
@@ -25,15 +25,17 @@
     -fx-background-radius: 10;
 }
 
-/* Style for the button when hovered over */
+/*the button when hovered over */
 .button:hover {
     -fx-background-color: #45a049; /* Darker Green */
 }
 
-/* New "Frosted Glass" style for content panes */
+/* New "Frosted Glass" style for content panels */
 .glass-pane {
     -fx-background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
     -fx-background-radius: 10;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
     -fx-padding: 15;
     -fx-border-color: rgba(255, 255, 255, 0.5); /* Faint white border */
     -fx-border-radius: 10;
