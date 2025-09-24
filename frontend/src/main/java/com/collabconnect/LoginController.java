@@ -26,7 +26,7 @@ public class LoginController {
         String password = passwordField.getText();
 
         if (userId.equals("krishdshah") && password.equals("collabconnect")) {
-            // On successful login, switch to the dashboard view
+            // On successful login, go to the dashboard view
             App.setRoot("frontend/dashboard-view");
         } else {
             statusLabel.setText("Invalid User ID or Password.");
