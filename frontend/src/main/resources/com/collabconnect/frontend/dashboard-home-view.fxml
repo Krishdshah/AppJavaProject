@@ -1,16 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="540.0" prefWidth="600.0" spacing="25.0" styleClass="content-area" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.collabconnect.DashboardHomeController">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
     <children>
-        <Label text="Welcome to Your Dashboard!">
-            <font>
-                <Font name="System Bold" size="24.0" />
-            </font>
-        </Label>
-        <Label text="Select an option from the menu to get started." />
+        <Label styleClass="title-2" text="Dashboard Overview" textFill="WHITE" />
+        
+        <Label styleClass="text-muted" text="Here's what's happening with your projects today." />
+
+        <GridPane hgap="20.0" vgap="20.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <VBox alignment="CENTER" spacing="10.0" styleClass="content-card, scale-on-hover" GridPane.columnIndex="0">
+                    <children>
+                        <Label fx:id="activeProjectsLabel" styleClass="title-1" text="0" textFill="#58a6ff" />
+                        <Label styleClass="text-muted, text-small" text="ACTIVE PROJECTS" />
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" spacing="10.0" styleClass="content-card, scale-on-hover" GridPane.columnIndex="1">
+                    <children>
+                        <Label fx:id="connectionsLabel" styleClass="title-1" text="0" textFill="#3fb950" />
+                        <Label styleClass="text-muted, text-small" text="CONNECTIONS" />
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" spacing="10.0" styleClass="content-card, scale-on-hover" GridPane.columnIndex="2">
+                    <children>
+                        <Label fx:id="pendingInvitesLabel" styleClass="title-1" text="0" textFill="#e3b341" />
+                        <Label styleClass="text-muted, text-small" text="PENDING INVITES" />
+                    </children>
+                </VBox>
+            </children>
+        </GridPane>
+
+        <GridPane hgap="20.0" vgap="20.0" VBox.vgrow="ALWAYS">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <VBox spacing="10.0" GridPane.columnIndex="0">
+                    <Label styleClass="title-3" text="Recent Activity" textFill="#c9d1d9" />
+                    <VBox fx:id="recentActivityBox" spacing="10.0" />
+                </VBox>
+                
+                <VBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1">
+                    <Label styleClass="title-3" text="Skill Distribution" textFill="#c9d1d9" />
+                    <VBox styleClass="content-card" VBox.vgrow="ALWAYS" alignment="CENTER">
+                        <javafx.scene.chart.PieChart fx:id="skillsChart" title="Platform Skills" legendSide="BOTTOM" />
+                    </VBox>
+                </VBox>
+            </children>
+        </GridPane>
     </children>
 </VBox>

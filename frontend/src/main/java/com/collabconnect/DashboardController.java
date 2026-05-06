@@ -46,6 +46,16 @@ public class DashboardController {
     }
 
     @FXML
+    protected void handleShowMessages(ActionEvent event) throws IOException {
+        loadCenterPane("frontend/chat-view");
+    }
+
+    @FXML
+    protected void handleShowTasks(ActionEvent event) throws IOException {
+        loadCenterPane("frontend/kanban-view");
+    }
+
+    @FXML
     protected void handleLogoutButton(ActionEvent event) throws IOException {
         App.setRoot("frontend/login-view");
     }

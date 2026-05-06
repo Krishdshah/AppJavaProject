@@ -14,6 +14,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        Application.setUserAgentStylesheet(new atlantafx.base.theme.PrimerDark().getUserAgentStylesheet());
+        
         // Start the application with the login view
         scene = new Scene(loadFXML("frontend/login-view"), 800, 600); // Increased default size
         stage.setTitle("CollabConnect");

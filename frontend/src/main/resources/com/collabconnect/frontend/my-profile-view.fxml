@@ -1,23 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="540.0" prefWidth="600.0" spacing="20.0" styleClass="content-area" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.collabconnect.MyProfileController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
     </padding>
     <children>
-        <Label text="My Profile">
-            <font>
-                <Font name="System Bold" size="24.0" />
-            </font>
-        </Label>
-        <Label text="Name: Krish D Shah" />
-        <Label text="Email: thekrishdshahbhs@gmail.com" />
-        <Label text="Skills: A lot of skills" />
-        <Label text="Availability: Call me , I am Busy" />
+        <HBox alignment="CENTER_LEFT">
+            <Label styleClass="title-2" text="My Profile" textFill="WHITE" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleEditProfile" styleClass="accent, scale-on-hover" text="Edit Profile" />
+        </HBox>
+        
+        <VBox spacing="15.0" styleClass="content-card">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <VBox spacing="5.0">
+                    <Label styleClass="text-small, text-muted" text="FULL NAME" />
+                    <TextField fx:id="nameField" editable="false" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 18px;" />
+                </VBox>
+                
+                <VBox spacing="5.0">
+                    <Label styleClass="text-small, text-muted" text="EMAIL ADDRESS" />
+                    <TextField fx:id="emailField" editable="false" style="-fx-background-color: transparent; -fx-text-fill: #58a6ff; -fx-font-size: 14px;" />
+                </VBox>
+                
+                <VBox spacing="5.0">
+                    <Label styleClass="text-small, text-muted" text="SKILLS (Comma separated)" />
+                    <TextField fx:id="skillsField" editable="false" style="-fx-background-color: transparent; -fx-text-fill: white;" />
+                </VBox>
+                
+                <VBox spacing="5.0">
+                    <Label styleClass="text-small, text-muted" text="AVAILABILITY" />
+                    <TextField fx:id="availabilityField" editable="false" style="-fx-background-color: transparent; -fx-text-fill: #e3b341;" />
+                </VBox>
+            </children>
+        </VBox>
     </children>
 </VBox>

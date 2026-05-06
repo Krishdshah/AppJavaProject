@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<VBox prefHeight="540.0" prefWidth="600.0" spacing="20.0" styleClass="content-area" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.collabconnect.KanbanController">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="15.0">
+            <Label styleClass="title-2" text="Task Board" textFill="WHITE" />
+            <ComboBox fx:id="projectSelector" promptText="Select Project">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Project Alpha" />
+                        <String fx:value="EcoTracker App" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#handleAddTask" styleClass="accent, scale-on-hover" text="+ Add Task" />
+        </HBox>
+        
+        <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+            <!-- To Do Column -->
+            <VBox spacing="10.0" styleClass="kanban-column" HBox.hgrow="ALWAYS">
+                <Label styleClass="title-4" text="To Do" textFill="WHITE" />
+                <VBox fx:id="todoColumn" spacing="10.0" VBox.vgrow="ALWAYS" />
+            </VBox>
+            
+            <!-- In Progress Column -->
+            <VBox spacing="10.0" styleClass="kanban-column" HBox.hgrow="ALWAYS">
+                <Label styleClass="title-4" text="In Progress" textFill="#58a6ff" />
+                <VBox fx:id="inProgressColumn" spacing="10.0" VBox.vgrow="ALWAYS" />
+            </VBox>
+            
+            <!-- Done Column -->
+            <VBox spacing="10.0" styleClass="kanban-column" HBox.hgrow="ALWAYS">
+                <Label styleClass="title-4" text="Done" textFill="#3fb950" />
+                <VBox fx:id="doneColumn" spacing="10.0" VBox.vgrow="ALWAYS" />
+            </VBox>
+        </HBox>
+    </children>
+</VBox>

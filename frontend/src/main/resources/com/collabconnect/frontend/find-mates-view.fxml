@@ -3,51 +3,49 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="540.0" prefWidth="620.0" spacing="15.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="540.0" prefWidth="600.0" spacing="20.0" styleClass="content-area" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.collabconnect.FindMatesController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
     </padding>
     <children>
-        <Label text="Find Mates &amp; Projects">
-            <font>
-                <Font name="System Bold" size="24.0" />
-            </font>
-        </Label>
+        <Label styleClass="title-2" text="Find Mates &amp; Projects" textFill="WHITE" />
+        
+        <HBox spacing="10.0">
+            <TextField fx:id="searchField" promptText="Search skills, names, or projects..." HBox.hgrow="ALWAYS" />
+        </HBox>
+        
+        <HBox spacing="10.0">
+            <Label fx:id="javaChip" onMouseClicked="#handleChipClick" styleClass="success, scale-on-hover" text=" Java ">
+                <padding><Insets bottom="2.0" left="5.0" right="5.0" top="2.0" /></padding>
+            </Label>
+            <Label fx:id="uiuxChip" onMouseClicked="#handleChipClick" styleClass="accent, scale-on-hover" text=" UI/UX ">
+                <padding><Insets bottom="2.0" left="5.0" right="5.0" top="2.0" /></padding>
+            </Label>
+            <Label fx:id="springChip" onMouseClicked="#handleChipClick" styleClass="warning, scale-on-hover" text=" Spring Boot ">
+                <padding><Insets bottom="2.0" left="5.0" right="5.0" top="2.0" /></padding>
+            </Label>
+             <Label fx:id="pythonChip" onMouseClicked="#handleChipClick" styleClass="danger, scale-on-hover" text=" Python ">
+                <padding><Insets bottom="2.0" left="5.0" right="5.0" top="2.0" /></padding>
+            </Label>
+        </HBox>
+
         <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background: transparent; -fx-background-color: transparent;" VBox.vgrow="ALWAYS">
             <content>
-                <VBox spacing="15.0">
+                <VBox spacing="20.0">
                     <children>
-                        <Label text="Available People">
-                            <font>
-                                <Font name="System Bold" size="18.0" />
-                            </font>
+                        <Label styleClass="title-3" text="Available People" textFill="#c9d1d9" />
+                        <VBox fx:id="peopleList" spacing="10.0" />
+                        
+                        <Label styleClass="title-3" text="Open Projects" textFill="#c9d1d9">
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
                         </Label>
-                        <VBox styleClass="glass-pane">
-                            <children>
-                                <Label text="Laksh Baweja - Backend Developer" />
-                                <Label text="Skills: Spring Boot, Hibernate, SQL" />
-                            </children>
-                        </VBox>
-                        <VBox styleClass="glass-pane">
-                            <children>
-                                <Label text="Kabilesh C - UI/UX Designer" />
-                                <Label text="Skills: CSS, Figma " />
-                            </children>
-                        </VBox>
-                        <Label text="Open Projects">
-                            <font>
-                                <Font name="System Bold" size="18.0" />
-                            </font>
-                        </Label>
-                        <VBox styleClass="glass-pane">
-                            <children>
-                                <Label text="Hackathon Project: EcoTracker App" />
-                                <Label text="Skills Needed: Java, REST APIs, UI Design" />
-                            </children>
-                        </VBox>
+                        <VBox fx:id="projectList" spacing="10.0" />
                     </children>
                 </VBox>
             </content>

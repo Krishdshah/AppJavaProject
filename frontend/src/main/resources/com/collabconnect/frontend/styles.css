@@ -1,44 +1,124 @@
-/* Root container style */
-.root-pane {
-    -fx-background-color: linear-gradient(to bottom right, #6495ED, #B0C4DE);
+/* Root App Background for Login/Registration */
+.app-background {
+    -fx-background-color: linear-gradient(to bottom right, #0d1117, #161b22, #0d1117);
 }
 
-/*the main header label */
-.header-label {
-    -fx-font-size: 20px;
-    -fx-text-fill: white;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.5, 0, 1);
-}
-
-/* input fields */
-.text-field, .password-field {
-    -fx-background-radius: 10;
-    -fx-border-radius: 10;
-    -fx-prompt-text-fill: #A9A9A9;
-}
-
-/*the main button */
-.button {
-    -fx-background-color: #4CAF50; /* Green */
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-background-radius: 10;
-}
-
-/*the button when hovered over */
-.button:hover {
-    -fx-background-color: #45a049; /* Darker Green */
-}
-
-/* New "Frosted Glass" style for content panels */
-.glass-pane {
-    -fx-background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
-    -fx-background-radius: 10;
-    -fx-text-fill: #FFFFFF;
-    -fx-font-weight: bold;
-    -fx-padding: 15;
-    -fx-border-color: rgba(255, 255, 255, 0.5); /* Faint white border */
-    -fx-border-radius: 10;
+/* Glass Card for Login / Registration / Widgets */
+.glass-card {
+    -fx-background-color: rgba(33, 38, 45, 0.85); /* Primer Dark elevated background */
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(240, 246, 252, 0.1);
+    -fx-border-radius: 12;
     -fx-border-width: 1px;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5); /* Subtle shadow */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 20, 0, 0, 10);
+    -fx-padding: 30;
+}
+
+/* Sidebar styling for Dashboard */
+.sidebar {
+    -fx-background-color: #0d1117;
+    -fx-border-color: transparent rgba(240, 246, 252, 0.1) transparent transparent;
+    -fx-border-width: 1px;
+}
+
+/* Sidebar Nav Buttons */
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #c9d1d9;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER-LEFT;
+    -fx-padding: 12 20;
+    -fx-cursor: hand;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+.nav-button:hover {
+    -fx-background-color: rgba(240, 246, 252, 0.1);
+    -fx-text-fill: #ffffff;
+}
+
+/* Header / App Bar */
+.app-header {
+    -fx-background-color: #161b22;
+    -fx-border-color: transparent transparent rgba(240, 246, 252, 0.1) transparent;
+    -fx-border-width: 1px;
+}
+
+/* General Layout padding utility */
+.content-area {
+    -fx-background-color: #0d1117;
+    -fx-padding: 20;
+}
+
+/* Scale transition utility for buttons */
+.scale-on-hover {
+    -fx-cursor: hand;
+}
+.scale-on-hover:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* Project / Mate Card */
+.content-card {
+    -fx-background-color: #161b22;
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(240, 246, 252, 0.1);
+    -fx-border-radius: 8;
+    -fx-border-width: 1px;
+    -fx-padding: 15;
+}
+.content-card:hover {
+    -fx-border-color: #58a6ff;
+}
+
+/* Kanban Board */
+.kanban-column {
+    -fx-background-color: #161b22;
+    -fx-border-color: rgba(240, 246, 252, 0.1);
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+}
+.kanban-card {
+    -fx-background-color: #21262d;
+    -fx-border-color: rgba(240, 246, 252, 0.1);
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 15;
+    -fx-cursor: hand;
+}
+.kanban-card:hover {
+    -fx-border-color: #8b949e;
+}
+
+/* Chat Messages */
+.chat-bubble-me {
+    -fx-background-color: #1f6feb;
+    -fx-background-radius: 15 15 0 15;
+    -fx-padding: 10 15;
+}
+.chat-bubble-other {
+    -fx-background-color: #21262d;
+    -fx-border-color: rgba(240, 246, 252, 0.1);
+    -fx-border-radius: 15 15 15 0;
+    -fx-background-radius: 15 15 15 0;
+    -fx-padding: 10 15;
+}
+.chat-text {
+    -fx-text-fill: white;
+}
+.chat-sidebar-item {
+    -fx-background-color: transparent;
+    -fx-padding: 10;
+    -fx-cursor: hand;
+    -fx-border-radius: 6;
+}
+.chat-sidebar-item:hover {
+    -fx-background-color: rgba(240, 246, 252, 0.1);
+}
+.chat-sidebar-item.active {
+    -fx-background-color: rgba(31, 111, 235, 0.2);
+    -fx-border-color: #1f6feb;
+    -fx-border-width: 0 0 0 3;
 }

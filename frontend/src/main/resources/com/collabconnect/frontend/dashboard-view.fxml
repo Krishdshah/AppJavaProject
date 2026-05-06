@@ -7,12 +7,17 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="root-pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.collabconnect.DashboardController">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="app-background" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.collabconnect.DashboardController">
     <top>
-        <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="20.0" style="-fx-background-color: #4682B4;">
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="20.0" styleClass="app-header">
             <children>
-                <Label fx:id="welcomeLabel" styleClass="header-label" text="Welcome, Krish D Shah!" HBox.hgrow="ALWAYS" />
-                <Button onAction="#handleLogoutButton" text="Logout" />
+                <Label styleClass="title-3" text="CollabConnect" textFill="WHITE">
+                    <padding>
+                        <Insets right="30.0" />
+                    </padding>
+                </Label>
+                <Label fx:id="welcomeLabel" styleClass="text-muted" text="Welcome, Krish D Shah!" HBox.hgrow="ALWAYS" />
+                <Button mnemonicParsing="false" onAction="#handleLogoutButton" styleClass="danger, scale-on-hover" text="Logout" />
             </children>
             <padding>
                 <Insets left="20.0" right="20.0" />
@@ -20,12 +25,27 @@
         </HBox>
     </top>
     <left>
-        <VBox prefHeight="540.0" prefWidth="180.0" spacing="10.0" style="-fx-background-color: #B0C4DE;">
+        <VBox prefHeight="540.0" prefWidth="200.0" spacing="5.0" styleClass="sidebar">
             <children>
-                <Button onAction="#handleShowDashboard" maxWidth="1.7976931348623157E308" text="Dashboard" />
-                <Button onAction="#handleShowProjects" maxWidth="1.7976931348623157E308" text="My Projects" />
-                <Button onAction="#handleShowFindMates" maxWidth="1.7976931348623157E308" text="Find Mates" />
-                <Button onAction="#handleShowProfile" maxWidth="1.7976931348623157E308" text="My Profile" />
+                <Label styleClass="text-muted, text-small" text="MENU">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                    </padding>
+                </Label>
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleShowDashboard" styleClass="nav-button" text="Dashboard" />
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleShowProjects" styleClass="nav-button" text="My Projects" />
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleShowTasks" styleClass="nav-button" text="Task Board" />
+                <Button contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleShowMessages" styleClass="nav-button" text="Messages">
+                    <graphic>
+                        <Label style="-fx-background-color: #f85149; -fx-background-radius: 10; -fx-font-size: 10px;" text="2" textFill="WHITE">
+                            <padding>
+                                <Insets bottom="2.0" left="6.0" right="6.0" top="2.0" />
+                            </padding>
+                        </Label>
+                    </graphic>
+                </Button>
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleShowFindMates" styleClass="nav-button" text="Find Mates" />
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleShowProfile" styleClass="nav-button" text="My Profile" />
             </children>
             <padding>
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
