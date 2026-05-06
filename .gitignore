@@ -6,7 +6,7 @@
 
 # Log files
 *.log
-
+.cmd
 # BlueJ files
 *.ctxt
 
